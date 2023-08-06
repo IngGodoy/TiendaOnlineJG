@@ -2,12 +2,12 @@ div {
     position: relative;
 }
 
-img {
+#imgIncono {
     max-width: 100px;
     height: auto;
 }
 
-p {
+#containerCount {
     position: absolute;
     bottom: 0;
     right: 0;

@@ -21,18 +21,22 @@ img{
 }
 
 nav {
-    display: flex; /* Esto colocará los botones en una fila */
+    display: flex; 
 }
 
-button {
-    background-color: #4CAF50;
+.nav-button {
+    display: inline-block;
+    background-color:  #4CAF50;
     color: white;
-    border: none;
     padding: 10px 20px;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
     cursor: pointer;
-    font-size: 16px;
-}
-
-button:hover {
+  }
+  
+  .nav-button:hover {
     background-color: #45a049;
-}
+  }
+  

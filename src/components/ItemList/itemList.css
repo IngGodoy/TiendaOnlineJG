@@ -1,0 +1,4 @@
+#seccionProductos{
+    display: flex;
+    flex-direction: row;
+}
