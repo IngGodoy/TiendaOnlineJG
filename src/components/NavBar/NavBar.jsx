@@ -11,7 +11,7 @@ const NavBar=()=>{
                 <Link  className="nav-button" to={"/category/proteccionElectrica"}>Protecciones eléctricas</Link>
                 <Link className="nav-button" to={"/category/cable"}>Cables</Link>
                 <Link className="nav-button" to={"/category/puestaTierra"}>Puesta a tierra</Link>
-                <Link className="nav-button" to={"*"}>Ver carrito</Link>
+                <Link className="nav-button" to={"/cart"}>Ver carrito</Link>
             </nav>
             <CartWidget/>
         </header>

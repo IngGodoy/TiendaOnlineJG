@@ -1,0 +1,16 @@
+.product-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .delete-button {
+    background-color: #f44336;
+    color: rgb(215, 245, 176);
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
