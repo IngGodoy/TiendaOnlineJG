@@ -1,21 +1,24 @@
-import { getProductoById } from "../../asyncMock.js";
 import { useEffect, useState } from "react";
 import ItemCounter from "../ItemCounter/ItemCounter.jsx";
 import "./ItemDetailContainer.css";
 import { useParams } from "react-router-dom";
+import { getDoc,doc } from "firebase/firestore";
+import { db } from "../../config/firebase.js";
 
 const ItemDetailContainer = () => {
   const { itemId } = useParams();
   const [producto, setProducto] = useState({});
 
   useEffect(() => {
-    getProductoById(itemId)
-      .then((response) => {
-        setProducto(response);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+    const ProductoRef= doc(db,"Item",itemId)
+    getDoc(ProductoRef)
+    .then(querySnapshot=>{
+      const componentesProducto=querySnapshot.data()
+      const ProductoAdaptado={id:querySnapshot,...componentesProducto}
+      setProducto(ProductoAdaptado)
+
+    })
+    
   }, [itemId]);
 
   const productoAgregar = {
