@@ -2,6 +2,8 @@ import { useContext } from "react";
 import { CartContext } from "../CartContext/CartContext";
 import { Link } from "react-router-dom";
 import "./cart.css";
+import Checkout from "../Checkout/Checkout";
+
 
 const Cart = () => {
   const { eliminarProducto, clearCart, cart,cartQuantity } = useContext(CartContext);
@@ -37,7 +39,7 @@ const Cart = () => {
         <h2>Tatal a pagar: {cartQuantity(cart).priceQuantity}</h2>
         <button className="delete-button" onClick={()=>clearCart()}>Borra todos los productos del carrito</button> <br></br>
         <Link to="/" className="nav-button">Agregar mas Productos</Link>
-        <Link to="/checkout" className="nav-button">checkout</Link>
+        <Link to="/Checkout" className="nav-button" element={<Checkout/>}>checkout</Link>
         
       </section>
 

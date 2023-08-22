@@ -14,7 +14,7 @@ const ItemDetailContainer = () => {
     getDoc(ProductoRef)
     .then(querySnapshot=>{
       const componentesProducto=querySnapshot.data()
-      const ProductoAdaptado={id:querySnapshot,...componentesProducto}
+      const ProductoAdaptado={id:querySnapshot.id,...componentesProducto}
       setProducto(ProductoAdaptado)
 
     })
