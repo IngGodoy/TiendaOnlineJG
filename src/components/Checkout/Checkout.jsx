@@ -21,7 +21,7 @@ const Checkout = () => {
         email: "correo_prueba@gmail.com",
       },
       items: cart,
-      //total: cartQuantity.priceQuantity
+      total: cartQuantity(cart).priceQuantity
     };
 
       // Traer los datos actualizados de Firebase
@@ -55,9 +55,10 @@ const Checkout = () => {
      
       if(productSinStock.length===0){
         batch.commit()
-        const orderRef=collection(db,"ordes")
-        const {idOrden}= await addDoc(orderRef,objetOrder)
-        console.log("numero de la orden de compra:  "+idOrden)
+        const orderRef=collection(db,"orders")
+        const {id}= await addDoc(orderRef,objetOrder)
+        console.log("numero de la orden de compra:  "+id)
+        
       }
     } catch (error) {
       console.error("Error al obtener los datos de Firebase:", error);
