@@ -1,10 +1,12 @@
-import { useContext } from "react";
+import { useContext,useState } from "react";
 import { CartContext } from "../CartContext/CartContext";
 import { db } from "../../config/firebase";
 import { getDocs, collection,addDoc, writeBatch,doc } from "firebase/firestore";
+import { Link } from "react-router-dom";
 
 const Checkout = () => {
-  const { cart, cartQuantity } = useContext(CartContext); // datos del cart
+  const { cart, cartQuantity, setCart } = useContext(CartContext); // datos del cart
+  const [idOrden,setIdOrden]=useState("") //orden de compra
 
   const createOrder = async () => {
     try {
@@ -58,6 +60,9 @@ const Checkout = () => {
         const orderRef=collection(db,"orders")
         const {id}= await addDoc(orderRef,objetOrder)
         console.log("numero de la orden de compra:  "+id)
+        setIdOrden(id)
+        setCart([]) // vaciar carrito de compras una vez generada la orden de compra
+
         
       }
     } catch (error) {
@@ -65,13 +70,30 @@ const Checkout = () => {
     }
   };
 
-  return (
-    <div>
+  if (idOrden) {
+    return (
+      <div>
+        <h2>Su compra fue realida con exito...!</h2>
+        <h3>
+          {"El número de ID de su compra es: "} {idOrden}
+        </h3>
+        <Link to="/" className="nav-button">Volver al inicio</Link>
+      </div>
+    );
+  } else {
+    return(
+      <div>
       <div>Checkout</div>
       <div>
         <button onClick={createOrder}>Generar Orden de compra</button>
       </div>
     </div>
+    )
+  }
+
+  return (
+    <>
+    </>
   );
 };
 
