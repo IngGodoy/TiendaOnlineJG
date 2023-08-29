@@ -8,6 +8,7 @@ import { db } from "../../config/firebase.js";
 const ItemDetailContainer = () => {
   const { itemId } = useParams();
   const [producto, setProducto] = useState({});
+  console.log(producto)
 
   useEffect(() => {
     const ProductoRef= doc(db,"Item",itemId)
@@ -31,7 +32,7 @@ const ItemDetailContainer = () => {
     <div id="itemContainer">
       <p>{producto.nombre}</p>
       <img src={producto.foto} alt={producto.categoria} />
-      <ItemCounter stock={producto.stock} objetoProducto={productoAgregar} categoria={producto.categoria} />
+      <ItemCounter stock={producto.stock} objetoProducto={productoAgregar} descripcion={producto.descripcion} />
     </div>
   );
 };

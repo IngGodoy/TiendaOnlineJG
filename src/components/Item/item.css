@@ -24,6 +24,7 @@
     height: 150px;
     border-radius: 5px;
     margin-top: 10px;
+    margin-left: 9%;
   }
 
   .card > div:nth-child(3) {
@@ -47,6 +48,7 @@
     border-radius: 5px;
     margin-left: 35px;
     cursor: pointer;
+    margin-left: 23%;
     
     
   }
