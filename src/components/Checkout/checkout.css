@@ -1,0 +1,24 @@
+#containerFormulario {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+#containerFormulario div{
+    display:flex;
+    flex-direction: column;
+    justify-items: center;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}

@@ -3,7 +3,7 @@ import "./itemCounter.css";
 import { Link } from "react-router-dom";
 import {CartContext} from "../CartContext/CartContext"
 
-const ItemCounter = ({ stock, objetoProducto }) => {
+const ItemCounter = ({ stock, objetoProducto, categoria }) => {
   const [counter, setCounter] = useState(0); // contador de productos a agregregar
   const [addQuantity, setAddQuantity] = useState(0); // controlador del link al carrito de compra
   const {addProduct} = useContext(CartContext)// indico el context que voy a usar
@@ -39,18 +39,27 @@ const ItemCounter = ({ stock, objetoProducto }) => {
   
 
   return addQuantity === 0 ? (
-    <div className="itemCounter">
-      <div className="botonesAgregar">
-        <button onClick={agregarProducto}>+</button>
-        <div>
-          <p> {counter} </p>
+    <>
+      <p id="p-categoria">Categoria: {categoria}</p>
+      <p id="p-categoria">Stock disponible: {stock}</p>
+      <div className="itemCounter">
+        <div className="botonesAgregar">
+          <button onClick={agregarProducto}>+</button>
+          <div>
+            <p> {counter} </p>
+          </div>
+          <button onClick={quitarProducto}>-</button>
         </div>
-        <button onClick={quitarProducto}>-</button>
+        <button onClick={agregarProductoCarrito}>Agregar Producto</button>
       </div>
-      <button onClick={agregarProductoCarrito}>Agregar Producto</button>
-    </div>
+    </>
   ) : (
-    <Link to={"/cart"} className="button-link">Finalizar Compra</Link>
+    <div id="contenedor-prodcuto-agregado">
+      <p>Producto agregado al carrito de compras</p>
+      <Link to={"/cart"} className="button-link" id="botton-finalizar-compra">
+          Finalizar Compra
+      </Link>
+    </div>
   );
 };
 

@@ -14,3 +14,19 @@
     padding: 5px 10px;
     cursor: pointer;
   }
+  #button-inicio{
+    margin-left: 45%;
+    margin-top: 10%;
+  }
+  #botton-compra{
+    margin-left: 38%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+
+  #botton-compra h2{
+    margin-left: 5%;
+  }
+  #vaciar-cart{
+    margin-bottom: 2%;
+  }

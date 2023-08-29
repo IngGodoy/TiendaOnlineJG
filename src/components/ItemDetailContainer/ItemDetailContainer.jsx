@@ -31,9 +31,7 @@ const ItemDetailContainer = () => {
     <div id="itemContainer">
       <p>{producto.nombre}</p>
       <img src={producto.foto} alt={producto.categoria} />
-      <p id="p-categoria">Categoria: {producto.categoria}</p>
-      <p id="p-categoria">Stock disponible: {producto.stock}</p>
-      <ItemCounter stock={producto.stock} objetoProducto={productoAgregar} />
+      <ItemCounter stock={producto.stock} objetoProducto={productoAgregar} categoria={producto.categoria} />
     </div>
   );
 };
