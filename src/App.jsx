@@ -12,7 +12,7 @@ function App() {
     <CartProvider> 
         <NavBar />
       <Routes>
-        <Route path="/" element={<ItemListContainer greetin={"Bienvenidos a mi tienda Online"} />}/>
+        <Route path="/" element={<ItemListContainer greetin={"Bienvenidos a la Tienda Online Electric Arc"} />}/>
         <Route path="/category/:categoryId" element={<ItemListContainer greetin={"Productos por categoria"} />}/>
         <Route path="/item/:itemId" element={<ItemDetailContainer />}/>
         <Route path="*" element={<h2>404 NOT FOUND</h2>}/>

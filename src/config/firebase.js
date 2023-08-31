@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 import {getFirestore} from "firebase/firestore"
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCzwpPQQoZiW2S48vztrRjs9LoE_5q7aMI",
-  authDomain: "carritocompras-94a51.firebaseapp.com",
-  projectId: "carritocompras-94a51",
-  storageBucket: "carritocompras-94a51.appspot.com",
-  messagingSenderId: "805008028028",
-  appId: "1:805008028028:web:72e8816d4d00820edaf4f9"
+  apiKey: import.meta.env.VITE_APP_API_KEY,
+  authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_APP_ID
 };
 
 // Initialize Firebase
